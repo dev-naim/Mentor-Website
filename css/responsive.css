@@ -1,0 +1,57 @@
+
+/* 992 */
+
+@media (max-width: 992px) {
+    .events-img-section .res-event-mb{
+        margin-bottom: 120px;
+    }
+    .events-img-section .res-event-mt{
+        margin-top: 120px;
+    }
+}
+/* course dtls tabs section end */
+
+/* 778px down */
+
+/* responsive */
+@media (max-width: 768px) {
+    .course-dtls-tab-section .nav{
+        --bs-nav-pills-border-radius: 0;
+    --bs-nav-pills-link-active-color: #fff;
+        --bs-nav-pills-link-active-bg: #5FCF80;
+        --bs-nav-link-padding-x: 20px;
+    }
+    .course-dtls-tab-section .tab-lft-item{
+        border-right: none;
+        
+    }
+    .course-dtls-tab-section .tab-lft-item ul li a.active::after {
+        content: "";
+        position: static;
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 0;
+        background: none;
+    }
+    .course-tabing-para .row{
+        flex-direction: column-reverse;
+    }
+    .about-sectionn .row{
+        flex-direction: column-reverse;
+    }
+    .about-sectionn .about-left{
+        margin-top: 30px;
+    }
+    .footer-bottom{
+        text-align: center;
+    }
+   
+}
+
+/* course dtls tabs section end */
+@media (max-width: 576px) {
+    section .item-mt{
+        margin-top: 40px;
+    }
+}

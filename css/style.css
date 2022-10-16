@@ -1,0 +1,867 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+* ul{
+    list-style: none;
+    padding-left: 0;
+}
+a{
+    text-decoration: none;
+}
+.section-bg{
+    background-color: #f6f7f6;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover> a {
+    color: #16df7e;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #5fcf80;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Disable aos animation delay on mobile devices
+  --------------------------------------------------------------*/
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #5fcf80;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #7ed899;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+/* main css */
+.navbar-collapse {
+    align-items: center;
+    width: 77%;
+}
+.header-btn {
+    width: 128px;
+    margin-left: 20px;
+}
+.header-btn .btn {
+    background: #5fcf80;
+    padding: 5px 21px;
+    font-size: 15px;
+    transition: all 0.4s;
+}
+.header-btn .btn:hover{
+    background: #50ae6c;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #5fcf80 !important;
+}
+.header-section ul> li:hover >a{
+    color: #50ae6c !important;
+}
+.header-section ul> li:hover >a i{
+    color: #50ae6c !important;
+}
+
+
+/* Dorp Down */
+.header-section li{
+    position: relative;
+}
+.header-section li> ul {
+    position: absolute;
+    padding: 10px;
+    top: 70px;
+    z-index: 55;
+    left: 37px;
+    width: 202px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+
+    opacity: 0;
+    visibility: hidden;
+    
+}
+.header-section li ul> li{
+    line-height: 10px;
+    position: relative;
+}
+
+.header-section ul> li:hover >ul{
+    opacity: 1;
+    visibility: visible;
+    top: 44px;
+}
+.header-section .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a {
+    color: #5fcf80;
+}
+
+/* Sub dorop down */
+.header-section li ul li ul {
+    position: absolute;
+    top: 20px !important;
+    left: 148px !important;
+    width: 200px;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.header-section li ul li:hover ul{
+    opacity: 1;
+    visibility: visible;
+    left: 178px !important;
+
+}
+
+/* ========== Hero Section ========== */
+.hero-section {
+    background: url('../image/hero-bg.jpg') no-repeat top center / cover;
+    height: 80vh;
+    max-width: 100%;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+.hero-section::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: -1;
+}
+.hero-content {
+    margin-top: 100px;
+}
+.hero-content h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 56px;
+}
+.hero-content h2{
+    font-size: 24px;
+    color: #eee;
+    margin-top: 10px;
+}
+.hero-content a{
+    border: 2px solid #fff ;
+    color: #fff;
+    padding: 10px 35px;
+}
+.hero-content a:hover {
+    background: #5fcf80 !important;
+    color: #fff;
+    border-color: #5fcf80;
+}
+/* responsive */
+@media (max-width: 992px) {
+    .hero-content {
+        margin-top: 70px;
+    }
+    .hero-section {
+        background-attachment: scroll;
+    }
+}
+@media (max-width: 768px){
+    .hero-section {
+        height: 100vh;
+    }
+    .hero-content h1{
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .hero-content h2{
+        font-size: 20px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+   
+    
+    .hero-content {
+        margin-top: 240px;
+    }
+    .hero-content a.btn{
+        margin-top: 20px;
+    }
+}
+
+/* ===== About section start here ===== */
+
+.about-left h3{
+    font-weight: bold;
+    font-size: 25px;
+}
+.about-left ul li{
+    color: #444444;
+}
+.about-left ul li i{
+    display: inline-block;
+    color: #5fcf80;
+    font-size: 20px;
+    margin-right: 5px;
+}
+/* ===== About section ends here ===== */
+
+/* ===== Counts Section Start here */
+.counts-section span{
+    display: inline-block;
+    color: #5fcf80;
+    font-size: 48px;
+    font-weight: bold;
+}
+.counts-section p{
+    font-weight: bold;
+}
+/* ===== Counts Section Ends here */
+
+/* ====== Why Chose us Section start here */
+.why-chose-left{
+    background: #5fcf80;
+    padding: 30px;
+}
+.why-chose-left h3{
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+}
+.why-chose-left p{
+    color: #fff;
+    font-size: 16px;
+    margin: 25px 0;
+}
+.why-chose-left a {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 33px;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
+.why-chose-left a i{
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
+.why-chose-left a:hover i{
+    color: #5fcf80 ;
+}
+.why-chose-left a:hover {
+    background: #fff;
+    color: #5fcf80;
+}
+
+.why-chose-right-item .why-card-icon {
+   margin: 30px auto;
+   height: 70px;
+   width: 70px;
+   line-height: 90px;
+   border-radius: 50px;
+   background: #ecf9f0;
+}
+.why-chose-right-item .why-card-icon i{
+    font-size: 33px;
+    color: #5fcf80;
+}
+.why-chose-right-item h3{
+    font-weight: bold;
+    font-size: 21px;
+    padding-bottom: 20px;
+}
+.why-chose-right-item p{
+    font-size: 15px;
+    color: #848484;
+}
+
+@media (max-width: 992px) {
+    .why-chose-right-item{
+        margin-bottom: 30px;
+    }
+    .why-chose-left {
+        margin-bottom: 10px;
+    }
+
+}
+
+/* ====== Why Chose us Section Ends here */
+
+/* ===== Features Section start here ===== */
+.icon-box{
+    border: 2px solid #eef0ef;
+    padding: 25px 20px;
+    transition: all 0.4s ease-in-out;
+   
+}
+
+.icon-box i {
+    float: left;
+    margin-right: 10px;
+    font-size: 30px;
+    position: relative;
+    bottom: 8px;
+}
+.icon-box p a{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000;
+    transition: all 0.4s ease-in-out;
+}
+.icon-box h5 {
+    margin-bottom: 0;
+}
+/* hover */
+.icon-box:hover{
+    border: 2px solid #5fcf80;
+}
+.icon-box:hover p a{
+    color: #5fcf80;
+}
+
+@media (max-width: 768px) {
+    .mt {
+        margin-top: 20px;
+    }
+
+}
+
+/* ===== Features Section ends here ===== */
+
+/* ====== Populer Course Seciton start here */
+.populer-title h3{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.populer-title p{
+    position: relative;
+}
+.populer-title p::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 92px;
+    height: 1px;
+    width: 120px;
+    background: #7ed899;
+}
+.crd-pdding{
+    padding: 16px;
+}
+.crd-lr{
+    padding: 0 16px;
+}
+.crd-content h3 {
+    font-size: 14px;
+    background: #5fcf80;
+    color: #fff;
+    padding: 8px 13px;
+}
+.crd-content p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #37423b;
+}
+.trainer-para{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.trainer-para .trainer-profile img{
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.trainer-profile span{
+    font-weight: bold;
+    color: #37423b;
+}
+.populer-course-section .card-title{
+    color: #37423b;
+    transition: all 0.3s ease-in-out;
+}
+.populer-course-section .card-title:hover{
+    color: #5fcf80;
+}
+.populer-course-section .card-text {
+    font-size: 14px;
+    color: #777777;
+    margin: 10px 0;
+    margin-bottom: 15px;
+}
+.trainer-para{
+    border-top: 1px solid #eef0ef;
+    padding: 16px 0;
+    margin: 0 16px;
+}
+
+/* ====== Populer Course Seciton ends here */
+
+/* ====== Trainer Team Section Start Here */
+.trainer-team-section .card-title {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.trainer-team-section .card-subtitle {
+    font-size: 14px;
+}
+.trainer-team-section .card-text {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-top: 5px;
+}
+.trainer-team-section .social a{
+    font-size: 20px;
+    padding: 0 3px;
+    color: #aaaaaa;
+}
+.trainer-team-section .social a i{
+    color: #a09d9d;
+}
+.trainer-team-section .social a i:hover{
+    color: #5fcf80;
+}
+/* ====== Trainer Team Section Ends Here */
+
+/* ====== Footer Section Start here -====== */
+/* footer top start */
+.footer-top .newsletter form{
+    position: relative;
+}
+.footer-top .newsletter form input[type="submit"]{
+  background: #5fcf80;
+  color: #fff;
+}
+.footer-top .newsletter form input[type="submit"]{
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+.footer-bg{
+    background-color: #f9faf9;
+}
+/* footer content */
+.footer-content h3{
+    font-size: 28px;
+}
+.footer-content address{
+    font-size: 15px;
+    color: #777777;
+}
+.footer-content address strong{
+    color: #777777;
+}
+/* footer useful link */
+.footer-top h4{
+    font-size: 17px;
+}
+.footer-top ul li{
+    margin-top: 15px;
+}
+.footer-top ul li a{
+    color: #777;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.footer-top ul li a:hover{
+    color: #5fcf80;
+}
+.footer-top ul li a i{
+    display: inline-block;
+    color: #5fcf80;
+    margin-right: 3px;
+}
+.newsletter p{
+    padding: 13px 0;
+}
+
+/* footer bottom */
+.footer-bottom {
+    background: #eef0ef;
+}
+.footer-btm-left p{
+    font-size: 15px;
+}
+.social-links a i{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #5fcf80;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.social-links a i:hover{
+    background: #50ae6c;
+}
+/* footer top end */
+/* ====== Footer Section Ends here -====== */
+
+/* coustm link css */
+.link-section{
+    background: #5fcf80;
+    color: #fff;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover> a {
+    color: #16df7e;
+}
+/* ======== Event Link Section start========*/
+  
+.events-img-section {
+    padding-top: 70px;
+    padding-bottom: 300px;
+    
+}
+.event-item{
+    overflow: hidden;
+}
+.event-item img{
+    transition: all 0.3s ease-in-out;
+}
+.event-item:hover img{
+    transform: scale(1.1);
+}
+.event-bio {
+background: #ffff;
+width: 484px;
+padding: 30px;
+margin: 0 auto;
+text-align: center;
+position: absolute;
+top: 300px;
+left: 43px;
+border-top: 4px solid transparent;
+transition: all 0.3s ease-in-out;
+}
+.event-item:hover .event-bio{
+    border-top: 4px solid #5fcf80;
+}
+.event-bio h4 {
+    font-weight: bold;
+    font-size: 22px;
+    color: #37423b;
+    transition: all 0.3s ease-in-out;
+}
+.event-item:hover .event-bio h4{
+    color: #5fcf80;
+}
+.event-bio span {
+    font-size: 16px;
+    color: #37423b;
+    display: inline-block;
+    padding: 15px 0;
+    font-style: oblique;
+}
+.event-bio p{
+    text-align: left;
+    color: #5e5e5e;
+}
+/* ===== Event Link Section end ======*/
+
+/* ======= Priceing Link Section Start======== */
+.priceing-card-section .card-header {
+    border-bottom: none;
+    background: #f8f8f8;
+}
+.priceing-card-section .card-header h5{
+    font-size: 16px;
+}
+.priceing-card-section .card-title {
+    font-size: 36px;
+    color: #5fcf80;
+    font-weight: 600;
+   
+}
+.priceing-card-section .card-title span{
+    display: inline-block;
+    font-size: 16px;
+    color: #bababa;
+    font-weight: normal;
+}
+.priceing-card-section .card-title sup{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: normal;
+    padding-right: 5px;
+}
+.priceing-card-section .card li {
+    font-size: 14px;
+    padding-bottom: 14px;
+    color: #444444;
+}
+.priceing-card-section .card li del{
+    color: #ccc;
+    font-size: 15px;
+}
+.priceing-card-section .card-footer{
+    background: #f8f8f8;
+}
+.priceing-card-section .card-footer a {
+    background: #5fcf80;
+    color: #fff;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+.priceing-card-section .card-footer a:hover {
+    background: #50ae6c;
+}
+.priceing-card-section .card{
+    position: relative;
+    overflow: hidden;
+}
+.priceing-card-section .card-body>span {
+    display: inline-block;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+    background: #5fcf80;
+    color: #fff;
+    padding: 3px 27px;
+    font-size: 15px;
+    transform: rotate(45deg);
+}
+/* ======= Priceing Link Section Ends======== */
+
+/* ======= Contact link Section Start ======== */
+
+.contact-map iframe{
+    width: 100%;
+    box-sizing: border-box;
+}
+.contact-left-item:hover.contact-left-item .icon{
+    background: #5fcf80;
+    color: #fff;
+}
+.contact-left-item .icon{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    background: #ecf9f0;
+    text-align: center;
+    color: #5fcf80;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.con-li-mt{
+    margin-top: 40px;
+}
+
+.contact-left-item .contact-content{
+    margin-left: 20px;
+}
+.contact-left-item .contact-content p{
+    font-size: 14px;
+    color: #657a6d;
+}
+.contact-left-item .contact-content h4{
+    font-size: 21px;
+    font-weight: bold;
+}
+.contact-button input[type="submit"] {
+    padding: 10px 35px;
+    background: #5fcf80;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.contact-button input[type="submit"]:hover {
+   background-color: #50ae6c;
+}
+/* ======= Contact link Section Ends ======== */
+
+/* ======= Course Seciton > Course Detaisl link section Start Here======= */
+.course-info {
+    background: #F6F7F6;
+    padding: 0px 13px;
+    height: 40px;
+}
+.course-info h3{
+    font-size: 17px;
+    margin-bottom: 0;
+    color: #606060;
+}
+.course-info p{
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+    color: #657a6d;
+}
+.course-info p a {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+    color: #657a6d;
+}
+.course-mt{
+    margin-top: 20px;
+}
+.course-dtls-lft-content {
+    padding-top: 30px;
+}
+.course-dtls-lft-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444444;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.course-dtls-lft-content h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 38px;
+    height: 1px;
+    width: 60px;
+    background: #5FCF80;
+}
+.course-dtls-lft-content p {
+    color: #444444;
+    margin-top: 14px;
+    line-height: 24px;
+}
+
+/* course dtls tabs section start */
+.course-dtls-tab-section .tab-lft-item{
+    border-right: 2px solid #e2e7e4;
+    
+}
+.course-dtls-tab-section .tab-lft-item ul li a.active {
+    position: relative;
+ }
+ .course-dtls-tab-section .tab-lft-item ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 259px;
+    top: 0;
+    height: 50px;
+    width: 2px;
+    background: #5FCF80;
+}
+.course-dtls-tab-section .nav-pills {
+    --bs-nav-pills-border-radius: 0;
+    --bs-nav-pills-link-active-color: #5FCF80;
+    --bs-nav-pills-link-active-bg: none;
+}
+
+.course-dtls-tab-section .nav {
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 10px;
+    --bs-nav-link-font-weight: bold;
+    --bs-nav-link-color: #444444;
+    --bs-nav-link-hover-color: #5FCF80;
+    --bs-nav-link-disabled-color: #6c757d;
+   
+}
+
+
+
+.course-tabing-para .tab-right-content h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #37423b;
+}
+.course-tabing-para .tab-right-content p {
+    font-size: 16px;
+    color: #777777;
+}
+
+/* ======= Course Seciton > Course Detaisl link section Ends Here======= */
+
